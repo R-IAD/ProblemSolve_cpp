@@ -1,7 +1,7 @@
 #include <iostream>
 #include <array>
 #include <math.h>
-#define Size 100
+#define Size 25
 using namespace std;
 
 void Get_Prime(array<bool, Size> &arr)
