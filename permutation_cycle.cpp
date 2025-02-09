@@ -1,26 +1,7 @@
 #include <iostream>
 #include <array>
-#define SIZE 7
+#define SIZE 6
 using namespace std;
-
-void incrementalSort(array<int, SIZE> &arr)
-{
-    for (int i = 1; i < arr.size(); i++)
-    {
-        int cpy = arr[i];
-        int j = i - 1;
-        for (j; j >= 0; j--)
-        {
-            if (arr[j] < cpy)
-                break;
-            else
-            {
-                arr[j + 1] = arr[j];
-            }
-        }
-        arr[j + 1] = cpy;
-    }
-}
 
 void Print_cycles(array<int, SIZE> &arr)
 {
@@ -65,7 +46,6 @@ void Print_cycles(array<int, SIZE> &arr)
                         }
                         else
                             continue;
-
                     }
                 }
                 else
@@ -76,6 +56,7 @@ void Print_cycles(array<int, SIZE> &arr)
             flag2 = true;
 
             cout << station << " -> " << arr[station] << '\n';
+            station = arr[station];
         }
 
         counter++;
@@ -84,6 +65,6 @@ void Print_cycles(array<int, SIZE> &arr)
 
 int main()
 {
-    array<int, SIZE> arr{3,5,0,2,1,4,6};
+    array<int, SIZE> arr{1, 2, 0, 5, 3, 4};
     Print_cycles(arr);
 }
